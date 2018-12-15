@@ -1,0 +1,31 @@
+<joblist>
+  <job>
+    <context>
+      <options preserveOrder='true'>
+        <option enforcedvalues='true' name='action' required='true' value='status' values='restart,start,status,stop' />
+      </options>
+    </context>
+    <defaultTab>output</defaultTab>
+    <description><![CDATA[This are the details for creating a job
+
+Create one blank line and all subsequent lines can use markdown format.
+You can see line 3, has text that show a URL link in markdown format.
+see [metrics page](https://docs.rundeck.com/docs/manual/creating-jobs.html)
+Rich text is useful to link to external tools or even charts and graphs.
+]]></description>
+    <executionEnabled>true</executionEnabled>
+    <group>web</group>
+    <id>149b88e9-9844-458d-81d2-a6ce0c408bd4</id>
+    <loglevel>INFO</loglevel>
+    <name>Apache</name>
+    <nodeFilterEditable>false</nodeFilterEditable>
+    <scheduleEnabled>true</scheduleEnabled>
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <description>test123</description>
+        <exec>service apache2 ${option.action}</exec>
+      </command>
+    </sequence>
+    <uuid>149b88e9-9844-458d-81d2-a6ce0c408bd4</uuid>
+  </job>
+</joblist>
